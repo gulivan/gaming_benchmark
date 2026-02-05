@@ -1,0 +1,585 @@
+:root {
+  font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+  line-height: 1.45;
+  font-weight: 400;
+  color-scheme: light;
+  color: #f4f7ff;
+  background: radial-gradient(circle at 10% 10%, #2848a2 0%, #0f1e4e 45%, #070d22 100%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 15% 15%, rgb(255 255 255 / 14%) 0, transparent 26%),
+    radial-gradient(circle at 80% 5%, rgb(94 222 255 / 12%) 0, transparent 24%),
+    radial-gradient(circle at 50% 110%, rgb(255 195 108 / 16%) 0, transparent 35%),
+    #050a1a;
+}
+
+a {
+  color: #91e8ff;
+  text-decoration: none;
+}
+
+button,
+input,
+a {
+  font: inherit;
+}
+
+button:focus-visible,
+input:focus-visible,
+a:focus-visible {
+  outline: 3px solid #ffd86a;
+  outline-offset: 2px;
+}
+
+.page {
+  margin: 0 auto;
+  width: min(1160px, 94vw);
+  padding: 28px 0 40px;
+}
+
+.centered {
+  text-align: center;
+  padding-top: 80px;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  border-radius: 22px;
+  padding: 44px 32px;
+  background:
+    linear-gradient(140deg, rgb(27 53 132 / 94%), rgb(20 107 126 / 88%)),
+    repeating-linear-gradient(
+      135deg,
+      rgb(255 255 255 / 9%) 0,
+      rgb(255 255 255 / 9%) 12px,
+      transparent 12px,
+      transparent 24px
+    );
+  box-shadow:
+    0 18px 32px rgb(0 0 0 / 40%),
+    inset 0 0 0 1px rgb(255 255 255 / 18%);
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: auto -50px -50px auto;
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgb(255 216 106 / 76%), transparent 68%);
+  pointer-events: none;
+}
+
+.hero-kicker {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.76rem;
+  color: #b3ddff;
+}
+
+.hero h1 {
+  margin: 8px 0 10px;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  letter-spacing: 0.02em;
+}
+
+.hero-description {
+  margin: 0;
+  max-width: 60ch;
+  color: #e9f7ff;
+}
+
+.catalog-section {
+  margin-top: 28px;
+}
+
+.section-heading-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.section-heading-row h2 {
+  margin: 0;
+}
+
+.section-heading-row p {
+  margin: 0;
+  color: #b8c8f3;
+}
+
+.catalog-grid {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.game-card {
+  display: grid;
+  grid-template-columns: 56px 1fr auto;
+  gap: 14px;
+  align-items: center;
+  border-radius: 16px;
+  padding: 14px;
+  background: linear-gradient(170deg, rgb(11 24 58 / 92%), rgb(16 39 94 / 83%));
+  border: 1px solid rgb(167 214 255 / 23%);
+  box-shadow: 0 8px 20px rgb(0 0 0 / 28%);
+}
+
+.game-card h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.game-card p {
+  margin: 4px 0 8px;
+  color: #d3defc;
+  font-size: 0.92rem;
+}
+
+.game-card-thumb {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  background: rgb(255 255 255 / 8%);
+  border: 1px solid rgb(255 255 255 / 14%);
+  font-size: 0.9rem;
+}
+
+.game-status {
+  display: inline-flex;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgb(100 255 177 / 14%);
+  color: #75ffc5;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.game-link,
+.home-link,
+.primary,
+.secondary {
+  border-radius: 10px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 120ms ease, filter 120ms ease;
+}
+
+.game-link,
+.home-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  background: linear-gradient(180deg, #91e8ff, #56bdd6);
+  color: #052840;
+  font-weight: 700;
+}
+
+.game-link:hover,
+.home-link:hover,
+.primary:hover,
+.secondary:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.04);
+}
+
+.primary,
+.secondary {
+  padding: 9px 14px;
+  font-weight: 700;
+}
+
+.primary {
+  background: linear-gradient(180deg, #ffd86a, #e9b848);
+  color: #3a2500;
+}
+
+.secondary {
+  background: rgb(255 255 255 / 10%);
+  color: #eef3ff;
+  border-color: rgb(255 255 255 / 24%);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  transform: none;
+}
+
+.game-page-head h1 {
+  margin: 16px 0 6px;
+}
+
+.game-page-head p {
+  margin: 0;
+  color: #c9d7f8;
+}
+
+.game-layout {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: minmax(300px, 1fr) 320px;
+  gap: 16px;
+  align-items: start;
+}
+
+.play-panel,
+.score-panel {
+  border-radius: 16px;
+  padding: 14px;
+  background: linear-gradient(160deg, rgb(10 21 52 / 90%), rgb(13 41 91 / 85%));
+  border: 1px solid rgb(160 219 255 / 20%);
+}
+
+.controls-text {
+  margin: 0 0 10px;
+  color: #d2e5ff;
+}
+
+.game-block {
+  display: grid;
+  gap: 10px;
+}
+
+.game-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.game-message {
+  margin: 0;
+  color: #d8e4ff;
+}
+
+.game-score {
+  margin: 0;
+  font-weight: 700;
+}
+
+.button-row,
+.move-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tetris-board {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 2px;
+  width: min(320px, 100%);
+  border-radius: 10px;
+  padding: 6px;
+  background: rgb(255 255 255 / 8%);
+}
+
+.tetris-cell {
+  aspect-ratio: 1;
+  border-radius: 3px;
+  background: rgb(255 255 255 / 5%);
+}
+
+.tetris-cell.filled {
+  background: #57d9ff;
+}
+
+.tetris-cell.active {
+  background: #ffd86a;
+}
+
+.flappy-stage,
+.pinball-stage {
+  position: relative;
+  width: min(340px, 100%);
+  height: 420px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #112b64, #163f93 40%, #1d7a8f);
+  border: 1px solid rgb(255 255 255 / 30%);
+}
+
+.flappy-bird {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  background: #ffd86a;
+  box-shadow: 0 0 0 2px rgb(0 0 0 / 30%);
+}
+
+.flappy-pipe {
+  position: absolute;
+  width: 48px;
+  background: #3df39b;
+  box-shadow: inset 0 0 0 2px rgb(3 72 44 / 45%);
+}
+
+.grid2048 {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(58px, 1fr));
+  gap: 8px;
+  width: min(340px, 100%);
+  padding: 10px;
+  border-radius: 12px;
+  background: rgb(9 20 49 / 90%);
+}
+
+.tile2048 {
+  display: grid;
+  place-items: center;
+  min-height: 58px;
+  border-radius: 8px;
+  background: rgb(255 255 255 / 10%);
+  font-weight: 700;
+}
+
+.tile2048[data-value='2'] {
+  background: #d4ebff;
+  color: #12355f;
+}
+
+.tile2048[data-value='4'] {
+  background: #b9dcff;
+  color: #112f56;
+}
+
+.tile2048[data-value='8'] {
+  background: #ffcb91;
+  color: #5f2f03;
+}
+
+.tile2048[data-value='16'],
+.tile2048[data-value='32'],
+.tile2048[data-value='64'] {
+  background: #f8a65e;
+  color: #4a1f00;
+}
+
+.tile2048[data-value='128'],
+.tile2048[data-value='256'],
+.tile2048[data-value='512'],
+.tile2048[data-value='1024'],
+.tile2048[data-value='2048'] {
+  background: #ffd86a;
+  color: #4f3101;
+}
+
+.wordle-form {
+  display: grid;
+  gap: 6px;
+}
+
+.wordle-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.wordle-actions input,
+.dialog input {
+  border-radius: 8px;
+  border: 1px solid rgb(255 255 255 / 35%);
+  background: rgb(255 255 255 / 10%);
+  color: #fff;
+  padding: 8px;
+}
+
+.wordle-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(38px, 1fr));
+  gap: 6px;
+  width: min(260px, 100%);
+}
+
+.wordle-cell {
+  min-height: 42px;
+  border-radius: 7px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgb(255 255 255 / 20%);
+  background: rgb(255 255 255 / 8%);
+  font-weight: 700;
+}
+
+.wordle-cell.correct {
+  background: #56cf89;
+  color: #04311c;
+}
+
+.wordle-cell.present {
+  background: #ffd86a;
+  color: #4f3101;
+}
+
+.wordle-cell.absent {
+  background: #76819c;
+  color: #1a2030;
+}
+
+.mine-grid {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(30px, 1fr));
+  gap: 4px;
+  width: min(320px, 100%);
+}
+
+.mine-cell {
+  min-height: 34px;
+  border: 1px solid rgb(255 255 255 / 24%);
+  background: rgb(255 255 255 / 10%);
+  color: #fff;
+  border-radius: 6px;
+  font-weight: 700;
+}
+
+.mine-cell.revealed {
+  background: rgb(255 255 255 / 18%);
+}
+
+.pinball-stage {
+  height: 440px;
+  background: linear-gradient(180deg, #111f50, #274c9a 45%, #1d517a);
+}
+
+.pinball-bumper {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #ffd86a, #ef8f4f 68%);
+  box-shadow: inset 0 0 0 2px rgb(255 255 255 / 30%);
+}
+
+.pinball-ball {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #f4f8ff, #87a7d6 80%);
+}
+
+.pinball-paddle {
+  position: absolute;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #91e8ff, #6eb1ff);
+}
+
+.score-panel h3 {
+  margin: 0 0 8px;
+}
+
+.score-empty {
+  margin: 0;
+  color: #cbdaff;
+}
+
+.score-list {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+  display: grid;
+  gap: 6px;
+}
+
+.score-list li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2px 10px;
+  border-radius: 8px;
+  padding: 7px;
+  background: rgb(255 255 255 / 8%);
+}
+
+.score-rank {
+  color: #ffd86a;
+  font-weight: 700;
+}
+
+.score-value {
+  font-weight: 700;
+}
+
+.score-date {
+  color: #c6d5f8;
+  grid-column: 1 / -1;
+  font-size: 0.86rem;
+}
+
+.dialog-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgb(0 0 0 / 58%);
+  display: grid;
+  place-items: center;
+  z-index: 20;
+  padding: 18px;
+}
+
+.dialog {
+  width: min(430px, 100%);
+  border-radius: 14px;
+  background: #0d204f;
+  border: 1px solid rgb(255 255 255 / 24%);
+  box-shadow: 0 22px 40px rgb(0 0 0 / 45%);
+  padding: 16px;
+  display: grid;
+  gap: 8px;
+}
+
+.dialog h2,
+.dialog p,
+.dialog label {
+  margin: 0;
+}
+
+.dialog-actions {
+  margin-top: 6px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.dialog-error {
+  margin: 0;
+  color: #ffd1d1;
+}
+
+@media (max-width: 920px) {
+  .game-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .score-panel {
+    order: 2;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero {
+    padding: 28px 20px;
+  }
+
+  .game-card {
+    grid-template-columns: 50px 1fr;
+  }
+
+  .game-link {
+    grid-column: 1 / -1;
+  }
+}

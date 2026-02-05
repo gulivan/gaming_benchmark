@@ -1,0 +1,58 @@
+import type { GameMeta } from '../types/game';
+
+export const GAMES: GameMeta[] = [
+  {
+    id: 'tetris',
+    title: 'Tetris',
+    description: 'Stack and clear lines before the board overflows.',
+    route: '/games/tetris',
+    thumbnail: '⬛⬜⬛',
+    status: 'playable',
+    controls: 'Arrow Left/Right move, Arrow Down speeds drop.',
+  },
+  {
+    id: 'flappy-bird',
+    title: 'Flappy Bird',
+    description: 'Tap to stay airborne and pass pipe gaps.',
+    route: '/games/flappy-bird',
+    thumbnail: '🐤',
+    status: 'playable',
+    controls: 'Space or click play area to flap upward.',
+  },
+  {
+    id: '2048',
+    title: '2048',
+    description: 'Merge matching tiles and reach bigger numbers.',
+    route: '/games/2048',
+    thumbnail: '2️⃣0️⃣4️⃣8️⃣',
+    status: 'playable',
+    controls: 'Arrow keys slide tiles in each direction.',
+  },
+  {
+    id: 'wordle',
+    title: 'Wordle',
+    description: 'Guess the secret five-letter word in six tries.',
+    route: '/games/wordle',
+    thumbnail: '🟩🟨⬜',
+    status: 'playable',
+    controls: 'Type a 5-letter guess and submit.',
+  },
+  {
+    id: 'minesweeper',
+    title: 'Minesweeper',
+    description: 'Reveal all safe cells while avoiding mines.',
+    route: '/games/minesweeper',
+    thumbnail: '💣',
+    status: 'playable',
+    controls: 'Click to reveal, right-click to flag.',
+  },
+  {
+    id: 'pinball',
+    title: 'Pinball',
+    description: 'Keep the ball alive and rack up bumper hits.',
+    route: '/games/pinball',
+    thumbnail: '🎯',
+    status: 'playable',
+    controls: 'Arrow Left/Right to move paddle.',
+  },
+];
