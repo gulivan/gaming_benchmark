@@ -25,8 +25,8 @@ Both implementations use:
 
 | Folder | AI Model | Lines of Code |
 |--------|----------|---------------|
-| `claude_implementation/` | Claude (Opus 4) | 2,824 |
-| `codex_implementation/` | Codex (codex-1) | 2,392 |
+| `claude_implementation/` | Claude Opus 4.6 | 2,824 |
+| `codex_implementation/` | OpenAI Codex 5.3 | 2,392 |
 
 Claude wrote ~18% more code, primarily due to separating game logic into dedicated files (e.g., `tetrisLogic.ts`, `pinballPhysics.ts`), while Codex kept logic inside component files.
 
@@ -46,10 +46,9 @@ npm run dev
 
 | Model | Price Tier | Rate Limit Consumed |
 |-------|------------|---------------------|
-| Claude (Opus 4) | $100/mo | 9% of hourly window |
-| Codex (codex-1) | $20/mo | 3% of hourly window |
+| Claude Opus 4.6 | $100/mo | 9% of 5h window |
+| OpenAI Codex 5.3 | $20/mo | 3% of 5h window |
 
-*(Need to re-run and check weekly window for Codex)*
 
 ### Feature Comparison
 
