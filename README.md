@@ -2,6 +2,10 @@
 
 A benchmark comparing AI implementations of the same specification: a "Nerd Gaming" game hub with 6 playable browser games.
 
+https://github.com/user-attachments/assets/demo.mp4
+
+https://github.com/gulivan/gaming_benchmark/raw/main/videos/demo.mp4
+
 ## Specification
 
 See [SPEC.md](./SPEC.md) for the full requirements. In summary:
